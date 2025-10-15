@@ -10,6 +10,15 @@
   --color-enlace: #154389;
 }
 
+/* Variables de color */
+:root {
+  --color-titulo: #2c130b;
+  --color-subtitulo: #391c47;
+  --color-fondo: #dbcbba;
+  --color-resaltado: #e10452;
+  --color-enlaces: #154389;
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -17,128 +26,237 @@
   box-sizing: border-box;
 }
 
-/* Body */
 body {
   font-family: 'Body Grotesque', sans-serif;
-  background: linear-gradient(135deg, #dbcbba, #f4ebe1);
-  color: var(--color-titulo);
+  line-height: 1.6;
 }
 
-/* Títulos */
+/* Menú sticky */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(219,203,186,0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+.menu-left a, .menu-right a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--color-enlaces);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu-left a:hover, .menu-right a:hover {
+  color: var(--color-resaltado);
+}
+
+.menu-center img {
+  height: 80px;
+}
+
+/* Portada */
+.portada {
+  position: relative;
+  height: 100vh;
+  background: url("../img/Trafalgar.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+}
+
+.portada .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44,19,11,0.4);
+}
+
+.portada-texto {
+  position: relative;
+  color: #fff;
+}
+
+.portada-texto h1 {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.portada-texto h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+/* Sección Sobre el artista */
+.sobre-artista {
+  background-color: #d8cec5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 4rem 2rem;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 800; /* ExtraBold */
+.sobre-artista .contenido {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.sobre-artista .texto {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.sobre-artista .texto h2 {
+  font-size: 2.5rem;
   color: var(--color-titulo);
+  margin-bottom: 0.5rem;
+}
+
+.subrayado {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-resaltado);
   margin-bottom: 1rem;
 }
-h2 { font-size: 1.5rem;
-  font-weight: 400; /* Regular */
-  color: var(--color-subtitulo); }
 
-/* Enlaces */
-a { color: var(--color-enlace); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* Carrusel portada */
-.carrusel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem 0;
+.sobre-artista .texto p {
+  font-size: 1.1rem;
+  color: var(--color-subtitulo);
 }
 
-.carrusel img {
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.sobre-artista .imagen {
+  flex: 1;
 }
 
-.carrusel img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+.sobre-artista .imagen img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.carrusel img {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* Sección Obras */
+.obras {
+  background-color: #d8cec5;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-.carrusel img.visible {
-  opacity: 1;
-  transform: translateY(0);
+.obras h2 {
+  font-size: 2.5rem;
+  color: var(--color-titulo);
+  margin-bottom: 0.5rem;
 }
 
-/* Grid catálogo */
-.grid {
+.obras .subrayado {
+  margin: 0 auto 2rem;
+}
+
+.grid-obras {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.grid img {
+
+.grid-obras a img {
   width: 100%;
   border-radius: 8px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Clase para animar al aparecer */
-.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Botones / iconos resaltados */
-.btn {
-  background-color: var(--color-resaltado);
-  color: #fff;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 800;
   transition: transform 0.3s ease;
 }
 
-.btn:hover {
+.grid-obras a:hover img {
   transform: scale(1.05);
 }
 
-section {
-  margin: 4rem auto;
+/* Sección Contacto */
+.contacto {
+  background-color: #391c47;
+  color: #d8cec5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.contacto .contenido {
+  display: flex;
   max-width: 1200px;
-  padding: 0 2rem;
+  width: 100%;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-family: 'Body Grotesque', sans-serif;
-  background-color: var(--color-fondo);
+.contacto .imagen {
+  flex: 1;
+  padding-right: 2rem;
 }
 
-footer p {
-  margin: 0;
-  font-size: 1rem;
+.contacto .imagen img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-footer a {
-  color: var(--color-resaltado); /* Color de enlaces = color resaltado */
-  text-decoration: none;        /* Quitar subrayado */
-  margin: 0 0.5rem;             /* Espaciado entre enlaces */
-  transition: color 0.3s ease;  /* Transición suave al hover */
+.contacto .texto {
+  flex: 1;
 }
 
-footer a:hover {
-  color: #fff;                  /* Cambiar a blanco al pasar el mouse */
-  text-decoration: underline;   /* Opcional: subrayado en hover */
+.contacto .texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #d8cec5;
+}
+
+.contacto .texto p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto form input,
+.contacto form textarea {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.contacto form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-resaltado);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contacto form button:hover {
+  transform: scale(1.05);
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
 }
