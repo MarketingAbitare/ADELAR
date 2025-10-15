@@ -5,18 +5,9 @@
 :root {
   --color-titulo: #2c130b;
   --color-subtitulo: #391c47;
-  --color-fondo: #d8cec5;
+  --color-fondo: #d6d2ce;
   --color-resaltado: #e10452;
   --color-enlace: #154389;
-}
-
-/* Variables de color */
-:root {
-  --color-titulo: #2c130b;
-  --color-subtitulo: #391c47;
-  --color-fondo: #dbcbba;
-  --color-resaltado: #e10452;
-  --color-enlaces: #154389;
 }
 
 /* Reset básico */
