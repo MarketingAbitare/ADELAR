@@ -117,3 +117,28 @@ section {
   max-width: 1200px;
   padding: 0 2rem;
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: 'Body Grotesque', sans-serif;
+  background-color: var(--color-fondo);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer a {
+  color: var(--color-resaltado); /* Color de enlaces = color resaltado */
+  text-decoration: none;        /* Quitar subrayado */
+  margin: 0 0.5rem;             /* Espaciado entre enlaces */
+  transition: color 0.3s ease;  /* Transición suave al hover */
+}
+
+footer a:hover {
+  color: #fff;                  /* Cambiar a blanco al pasar el mouse */
+  text-decoration: underline;   /* Opcional: subrayado en hover */
+}
