@@ -5,7 +5,7 @@
 :root {
   --color-titulo: #2c130b;
   --color-subtitulo: #391c47;
-  --color-fondo: #dbcbba;
+  --color-fondo: #d8d0ca;
   --color-resaltado: #e10452;
   --color-enlace: #154389;
 }
@@ -20,14 +20,26 @@
 /* Body */
 body {
   font-family: 'Body Grotesque', sans-serif;
-  background-color: var(--color-fondo);
+  background: linear-gradient(135deg, #dbcbba, #f4ebe1);
   color: var(--color-titulo);
-  line-height: 1.6;
 }
 
 /* Títulos */
-h1 { font-weight: 800; color: var(--color-titulo); }
-h2 { font-weight: 400; color: var(--color-subtitulo); }
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800; /* ExtraBold */
+  color: var(--color-titulo);
+  margin-bottom: 1rem;
+}
+h2 { font-size: 1.5rem;
+  font-weight: 400; /* Regular */
+  color: var(--color-subtitulo);
+  font-style: italic; /* un toque artístico */ }
 
 /* Enlaces */
 a { color: var(--color-enlace); text-decoration: none; }
@@ -38,14 +50,33 @@ a:hover { text-decoration: underline; }
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
 }
+
 .carrusel img {
-  width: 300px;
-  margin-right: 1rem;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-.carrusel img:hover { transform: scale(1.05); }
+
+.carrusel img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+.carrusel img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.carrusel img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Grid catálogo */
 .grid {
@@ -72,8 +103,18 @@ a:hover { text-decoration: underline; }
 .btn {
   background-color: var(--color-resaltado);
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  display: inline-block;
-  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 800;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+section {
+  margin: 4rem auto;
+  max-width: 1200px;
+  padding: 0 2rem;
 }
