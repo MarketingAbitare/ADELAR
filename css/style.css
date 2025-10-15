@@ -38,8 +38,7 @@ h1 {
 }
 h2 { font-size: 1.5rem;
   font-weight: 400; /* Regular */
-  color: var(--color-subtitulo);
-  font-style: italic; /* un toque artístico */ }
+  color: var(--color-subtitulo); }
 
 /* Enlaces */
 a { color: var(--color-enlace); text-decoration: none; }
