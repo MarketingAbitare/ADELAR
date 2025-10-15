@@ -1,0 +1,79 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Body+Grotesque:wght@400;800&display=swap');
+
+/* Variables de color */
+:root {
+  --color-titulo: #2c130b;
+  --color-subtitulo: #391c47;
+  --color-fondo: #dbcbba;
+  --color-resaltado: #e10452;
+  --color-enlace: #154389;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Body Grotesque', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-titulo);
+  line-height: 1.6;
+}
+
+/* Títulos */
+h1 { font-weight: 800; color: var(--color-titulo); }
+h2 { font-weight: 400; color: var(--color-subtitulo); }
+
+/* Enlaces */
+a { color: var(--color-enlace); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Carrusel portada */
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.carrusel img {
+  width: 300px;
+  margin-right: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.carrusel img:hover { transform: scale(1.05); }
+
+/* Grid catálogo */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.grid img {
+  width: 100%;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Clase para animar al aparecer */
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Botones / iconos resaltados */
+.btn {
+  background-color: var(--color-resaltado);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 1rem;
+}
