@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Título de la Obra | ADELAR Art</title>
+
+  <!-- Icono de pestaña (favicon) igual que en el index -->
   <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Estilos generales -->
   <link rel="stylesheet" href="css/style.css">
+
   <style>
     /* ===== Menú superior ===== */
     header {
@@ -15,7 +21,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100px;
+      height: 120px; /* igual que en index */
       background-color: rgba(219, 203, 186, 0.95);
       display: flex;
       justify-content: center;
@@ -25,7 +31,8 @@
     }
 
     header img {
-      height: 60px;
+      width: 600px; /* mismo ancho que en el index */
+      height: 200px; /* mismo alto */
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -38,7 +45,7 @@
     .obra-container {
       display: flex;
       height: 100vh;
-      padding-top: 100px;
+      padding-top: 120px; /* igual que la altura del header */
       background-color: #d8cec5;
     }
 
@@ -46,17 +53,26 @@
       width: 50%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
-      text-align: center;
-      padding: 2rem;
+      text-align: left;
+      padding: 4rem;
     }
 
     .obra-texto h1 {
       font-family: 'Body Grotesque', sans-serif;
       font-size: 3rem;
       color: #2c130b;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .obra-texto p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      color: #2c130b;
+      line-height: 1.6;
+      font-size: 1rem;
+      max-width: 90%;
     }
 
     .obra-imagen {
@@ -87,9 +103,8 @@
 
     .obra-galeria img {
       width: 100%;
-      max-width: 400px;
-      height: 250px;
-      object-fit: cover;
+      height: 300px; /* tamaño fijo igual para todas */
+      object-fit: cover; /* mantiene proporciones y recorta exceso */
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
@@ -98,7 +113,7 @@
       transform: scale(1.05);
     }
 
-    /* ===== Contacto (reutilizado del main) ===== */
+    /* ===== Contacto (idéntico al main) ===== */
     .contacto-obra {
       background-color: #391c47;
       color: #d8cec5;
@@ -175,6 +190,15 @@
   <section class="obra-container">
     <div class="obra-texto">
       <h1>Título de la Obra</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a urna id magna consectetur ultricies.
+        Integer tristique magna et enim sodales, in blandit ligula convallis. Sed luctus mi a libero sollicitudin,
+        sed tincidunt lacus porttitor. Cras fringilla, velit vel laoreet tincidunt, justo nibh facilisis magna, at
+        tempus augue lorem a velit. Phasellus interdum, enim nec ullamcorper finibus, est erat commodo nunc, id
+        feugiat mauris leo vel leo. Nulla facilisi. Donec dignissim, nisi non suscipit pharetra, lorem mi hendrerit
+        sapien, in mattis magna leo a eros. Morbi condimentum ipsum id lorem scelerisque posuere. Aenean ac erat
+        ligula. Cras a lorem ac justo dictum porta. Nam porttitor libero vitae diam facilisis imperdiet.
+      </p>
     </div>
     <div class="obra-imagen">
       <img src="img/Obra1.jpg" alt="Obra Principal">
@@ -199,7 +223,7 @@
       </form>
     </div>
     <div class="imagen">
-      <img src="img/placeholder-contact.jpg" alt="Contacto Fondo">
+      <img src="img/Trafalgar.jpg" alt="Contacto Fondo">
     </div>
   </section>
 </body>
