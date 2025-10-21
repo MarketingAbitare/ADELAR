@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Título de la Obra | ADELAR Art</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Menú superior ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-color: rgba(219, 203, 186, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      height: 60px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== Sección principal ===== */
+    .obra-container {
+      display: flex;
+      height: 100vh;
+      padding-top: 100px;
+      background-color: #d8cec5;
+    }
+
+    .obra-texto {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .obra-texto h1 {
+      font-family: 'Body Grotesque', sans-serif;
+      font-size: 3rem;
+      color: #2c130b;
+      margin-bottom: 1rem;
+    }
+
+    .obra-imagen {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #dbcbba;
+      padding: 2rem;
+    }
+
+    .obra-imagen img {
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* ===== Galería secundaria ===== */
+    .obra-galeria {
+      background-color: #d8cec5;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 3rem 5%;
+      justify-items: center;
+    }
+
+    .obra-galeria img {
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .obra-galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== Contacto (reutilizado del main) ===== */
+    .contacto-obra {
+      background-color: #391c47;
+      color: #d8cec5;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding: 5rem 10%;
+      height: 80vh;
+    }
+
+    .contacto-obra .texto {
+      width: 50%;
+    }
+
+    .contacto-obra .texto h2 {
+      font-family: 'Body Grotesque', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #e10452;
+      display: inline-block;
+    }
+
+    .contacto-obra .texto p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contacto-obra form input,
+    .contacto-obra form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #d8cec5;
+      color: #391c47;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .contacto-obra form button {
+      background-color: #e10452;
+      color: #d8cec5;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contacto-obra form button:hover {
+      background-color: #c90345;
+    }
+
+    .contacto-obra .imagen {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contacto-obra .imagen img {
+      width: 80%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html"><img src="img/ADELAR-Logo.png" alt="ADELAR Logo"></a>
+  </header>
+
+  <section class="obra-container">
+    <div class="obra-texto">
+      <h1>Título de la Obra</h1>
+    </div>
+    <div class="obra-imagen">
+      <img src="img/Obra1.jpg" alt="Obra Principal">
+    </div>
+  </section>
+
+  <section class="obra-galeria">
+    <img src="img/Obra1.jpg" alt="Detalle 1">
+    <img src="img/Obra2.jpg" alt="Detalle 2">
+    <img src="img/Obra3.jpg" alt="Detalle 3">
+  </section>
+
+  <section class="contacto-obra">
+    <div class="texto">
+      <h2>Contacto</h2>
+      <p>¿Interesado en adquirir esta obra o en conocer más? Envía un mensaje:</p>
+      <form action="mailto:adelar.art@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Tu nombre">
+        <input type="email" name="email" placeholder="Tu correo">
+        <textarea name="message" rows="5" placeholder="Mensaje..."></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="imagen">
+      <img src="img/Trafalgar.jpg" alt="Contacto Fondo">
+    </div>
+  </section>
+</body>
+</html>
