@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Título de la Obra | ADELAR Art</title>
 
-  <!-- Icono de pestaña (favicon) igual que en el index -->
-  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- Icono de pestaña (favicon personalizado) -->
+  <link rel="icon" type="image/png" href="img/AdlR_Icono.png">
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 120px; /* igual que en index */
+      height: 120px; /* igual que index */
       background-color: rgba(219, 203, 186, 0.95);
       display: flex;
       justify-content: center;
@@ -31,8 +31,8 @@
     }
 
     header img {
-      width: 600px; /* mismo ancho que en el index */
-      height: 200px; /* mismo alto */
+      height: 120px; /* mismo tamaño que index */
+      width: auto;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -44,7 +44,7 @@
     /* ===== Sección principal ===== */
     .obra-container {
       display: flex;
-      height: 100vh;
+      min-height: 100vh;
       padding-top: 120px; /* igual que la altura del header */
       background-color: #d8cec5;
     }
@@ -73,6 +73,7 @@
       line-height: 1.6;
       font-size: 1rem;
       max-width: 90%;
+      text-align: justify; /* ✅ texto justificado */
     }
 
     .obra-imagen {
@@ -99,12 +100,13 @@
       gap: 20px;
       padding: 3rem 5%;
       justify-items: center;
+      margin-top: 4rem; /* ✅ espacio extra desde la imagen principal */
     }
 
     .obra-galeria img {
       width: 100%;
-      height: 300px; /* tamaño fijo igual para todas */
-      object-fit: cover; /* mantiene proporciones y recorta exceso */
+      height: 400px; /* ✅ más alto */
+      object-fit: cover; /* mantiene proporciones */
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
@@ -197,17 +199,18 @@
         tempus augue lorem a velit. Phasellus interdum, enim nec ullamcorper finibus, est erat commodo nunc, id
         feugiat mauris leo vel leo. Nulla facilisi. Donec dignissim, nisi non suscipit pharetra, lorem mi hendrerit
         sapien, in mattis magna leo a eros. Morbi condimentum ipsum id lorem scelerisque posuere. Aenean ac erat
-        ligula. Cras a lorem ac justo dictum porta. Nam porttitor libero vitae diam facilisis imperdiet.
+        ligula. Cras a lorem ac justo dictum porta. Nam porttitor libero vitae diam facilisis imperdiet. Praesent
+        finibus, massa vitae maximus lacinia, mi magna volutpat augue, sed porttitor est neque ut lectus.
       </p>
     </div>
     <div class="obra-imagen">
-      <img src="img/Serie Interactiva-2-1.jpg" alt="Obra Principal">
+      <img src="img/Serie Interactiva-2-3.jpg" alt="Obra Principal">
     </div>
   </section>
 
   <section class="obra-galeria">
-    <img src="img/Serie Interactiva-2-2.jpg" alt="Detalle 1">
-    <img src="img/Serie Interactiva-2-3.jpg" alt="Detalle 2">
+    <img src="img/Serie Interactiva-2-1.jpg" alt="Detalle 1">
+    <img src="img/Serie Interactiva-2-2.jpg" alt="Detalle 2">
     <img src="img/Serie Interactiva-2-4.jpg" alt="Detalle 3">
   </section>
 
