@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serie Interactiva 2 | ADELAR Art</title>
+  <title>Título de la Obra | ADELAR Art</title>
 
-  <!-- Icono de pestaña (favicon personalizado) -->
+  <!-- Icono de pestaña -->
   <link rel="icon" type="image/png" href="img/AdlR_Icono.png">
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
-  <!-- Estilos generales -->
+  <!-- Estilos base -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* ===== Menú superior ===== */
+    /* ===== HEADER (idéntico al index) ===== */
     header {
       position: fixed;
       top: 0;
@@ -31,7 +31,7 @@
     }
 
     header img {
-      height: 120px; /* mismo tamaño que index */
+      height: 120px;
       width: auto;
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -41,22 +41,22 @@
       transform: scale(1.05);
     }
 
-    /* ===== Sección principal ===== */
+    /* ===== SECCIÓN PRINCIPAL ===== */
     .obra-container {
       display: flex;
       min-height: 100vh;
-      padding-top: 120px; /* igual que la altura del header */
+      padding-top: 120px;
       background-color: #d8cec5;
     }
 
     .obra-texto {
       width: 50%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      flex-direction: column;
-      text-align: left;
       padding: 4rem;
+      background-color: #d8cec5;
     }
 
     .obra-texto h1 {
@@ -71,28 +71,28 @@
       font-weight: 400;
       color: #2c130b;
       line-height: 1.6;
-      font-size: 1rem;
-      max-width: 90%;
-      text-align: justify; /* ✅ texto justificado */
+      text-align: justify;
     }
 
     .obra-imagen {
       width: 50%;
       display: flex;
       justify-content: center;
-      align-items: center;
-      background-color: #dbcbba;
+      align-items: flex-start; /* ✅ justificada arriba */
+      background-color: #d8cec5;
       padding: 2rem;
     }
 
     .obra-imagen img {
       width: 80%;
-      height: auto;
+      height: 90vh;
+      object-fit: cover;
+      object-position: top; /* ✅ muestra la parte superior */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    /* ===== Galería secundaria ===== */
+    /* ===== GRID DE IMÁGENES ===== */
     .obra-galeria {
       background-color: #d8cec5;
       display: grid;
@@ -100,22 +100,58 @@
       gap: 20px;
       padding: 3rem 5%;
       justify-items: center;
-      margin-top: 4rem; /* ✅ espacio extra desde la imagen principal */
+      margin-top: 4rem;
     }
 
     .obra-galeria img {
       width: 100%;
-      height: 400px; /* ✅ más alto */
-      object-fit: cover; /* mantiene proporciones */
+      height: 400px;
+      object-fit: cover;
       border-radius: 8px;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .obra-galeria img:hover {
       transform: scale(1.05);
     }
 
-    /* ===== Contacto (idéntico al main) ===== */
+    /* ===== LIGHTBOX / CARRUSEL ===== */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      font-family: sans-serif;
+    }
+
+    /* ===== CONTACTO (idéntico al main) ===== */
     .contacto-obra {
       background-color: #391c47;
       color: #d8cec5;
@@ -185,13 +221,15 @@
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
     <a href="index.html"><img src="img/ADELAR-Logo.png" alt="ADELAR Logo"></a>
   </header>
 
+  <!-- SECCIÓN OBRA PRINCIPAL -->
   <section class="obra-container">
     <div class="obra-texto">
-      <h1>Serie Interactiva 2</h1>
+      <h1>Título de la Obra</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a urna id magna consectetur ultricies.
         Integer tristique magna et enim sodales, in blandit ligula convallis. Sed luctus mi a libero sollicitudin,
@@ -203,21 +241,30 @@
         finibus, massa vitae maximus lacinia, mi magna volutpat augue, sed porttitor est neque ut lectus.
       </p>
     </div>
+
     <div class="obra-imagen">
-      <img src="img/Serie Interactiva-2-3.jpg" alt="Obra Principal">
+      <img src="img/Obra1.jpg" alt="Obra Principal">
     </div>
   </section>
 
+  <!-- GALERÍA SECUNDARIA -->
   <section class="obra-galeria">
-    <img src="img/Serie Interactiva-2-1.jpg" alt="Detalle 1">
-    <img src="img/Serie Interactiva-2-2.jpg" alt="Detalle 2">
-    <img src="img/Serie Interactiva-2-4.jpg" alt="Detalle 3">
+    <img src="img/Obra1.jpg" alt="Detalle 1">
+    <img src="img/Obra2.jpg" alt="Detalle 2">
+    <img src="img/Obra3.jpg" alt="Detalle 3">
   </section>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img src="" alt="Vista ampliada" id="lightbox-img">
+  </div>
+
+  <!-- CONTACTO -->
   <section class="contacto-obra">
     <div class="texto">
       <h2>Contacto</h2>
-      <p>¿Interesado en adquirir esta obra o en conocer más? Envía un mensaje:</p>
+      <p>¿Interesado en adquirir esta obra o conocer más? Envía un mensaje:</p>
       <form action="mailto:adelar.art@gmail.com" method="post" enctype="text/plain">
         <input type="text" name="name" placeholder="Tu nombre">
         <input type="email" name="email" placeholder="Tu correo">
@@ -226,8 +273,31 @@
       </form>
     </div>
     <div class="imagen">
-      <img src="img/placeholder-contact.jpg" alt="Contacto Fondo">
+      <img src="img/Trafalgar.jpg" alt="Contacto Fondo">
     </div>
   </section>
+
+  <!-- SCRIPT LIGHTBOX -->
+  <script>
+    const images = document.querySelectorAll('.obra-galeria img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
