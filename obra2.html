@@ -69,4 +69,245 @@
 
     .obra-texto p {
       font-family: 'Montserrat', sans-serif;
-      font-weig
+      font-weight: 400;
+      color: #2c130b;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .obra-imagen {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: #d8cec5;
+      padding: 2rem;
+    }
+
+    .obra-imagen img {
+      width: 80%;
+      height: 90vh;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* ===== GRID DE IMÁGENES ===== */
+    .obra-galeria {
+      background-color: #d8cec5;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 3rem 5%;
+      justify-items: center;
+      margin-top: 4rem;
+    }
+
+    .obra-galeria img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .obra-galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    .obra-galeria img:first-child {
+      object-position: top; /* primera imagen justificada arriba */
+    }
+
+    /* ===== LIGHTBOX / CARRUSEL ===== */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      font-family: sans-serif;
+    }
+
+    /* ===== CONTACTO REESTILIZADO ===== */
+    .contacto-obra {
+      position: relative;
+      background-color: #391c47;
+      color: #d8cec5;
+      display: flex;
+      justify-content: center; /* ✅ centrado horizontal */
+      align-items: center;     /* ✅ centrado vertical */
+      flex-direction: column;
+      padding: 5rem 10%;
+      min-height: 80vh;
+      overflow: hidden;
+    }
+
+    /* Imagen de fondo con filtro morado */
+    .contacto-obra::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('img/placeholder-contact.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.4; /* ✅ filtro morado */
+      background-color: #391c47;
+      z-index: 0;
+    }
+
+    .contacto-obra .texto {
+      position: relative; /* por encima de la capa */
+      z-index: 1;
+      width: 100%;
+      max-width: 600px;
+      text-align: center; /* ✅ título y formulario centrados */
+    }
+
+    .contacto-obra .texto h2 {
+      font-family: 'Body Grotesque', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #e10452;
+      display: inline-block;
+    }
+
+    .contacto-obra .texto p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contacto-obra form input,
+    .contacto-obra form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #d8cec5;
+      color: #391c47;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .contacto-obra form button {
+      background-color: #e10452;
+      color: #d8cec5;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contacto-obra form button:hover {
+      background-color: #c90345;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="menu">
+      <div class="menu-center">
+         <a href="index.html"><img src="img/ADELAR-Logo.png" alt="ADELAR Logo"></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN OBRA PRINCIPAL -->
+  <section class="obra-container">
+    <div class="obra-texto">
+      <h1>CUERDAS BATIDAS. BEATEN ROPES</h1>
+      <p>
+        Medium: Pigments, aluminium, mirrors, nylon
+      </p>
+       <p>
+        Dimensions: 40 X 60X 5 cm
+      </p>
+      <p>
+        Year: 2025
+      </p>
+      <p>
+        Hanging Hardware: Included (ready to hang)
+      </p>
+      <p>
+        This piece is part of a contemporary kinetic art series that explores the intersection of light, movement, and perception...
+      </p>
+    </div>
+
+    <div class="obra-imagen">
+      <img src="img/Serie Interactiva-2-3.jpg" alt="Obra Principal">
+    </div>
+  </section>
+
+  <!-- GALERÍA SECUNDARIA -->
+  <section class="obra-galeria">
+    <img src="img/Serie Interactiva-2-1.jpg" alt="Detalle 1" data-pos="top">
+    <img src="img/Serie Interactiva-2-2.jpg" alt="Detalle 2">
+    <img src="img/Serie Interactiva-2-4.jpg" alt="Detalle 3">
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img src="" alt="Vista ampliada" id="lightbox-img">
+  </div>
+
+  <!-- CONTACTO -->
+  <section class="contacto-obra">
+    <div class="texto">
+      <h2>Contacto</h2>
+      <p>¿Interesado en adquirir esta obra o conocer más? Envía un mensaje:</p>
+      <form action="mailto:adelar.art@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Tu nombre">
+        <input type="email" name="email" placeholder="Tu correo">
+        <textarea name="message" rows="5" placeholder="Mensaje..."></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SCRIPT LIGHTBOX -->
+  <script>
+    const images = document.querySelectorAll('.obra-galeria img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+
+        const pos = img.dataset.pos || getComputedStyle(img).objectPosition || 'center
