@@ -15,23 +15,24 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* ===== HEADER (idéntico al index) ===== */
+    /* ===== HEADER (idéntico al index, padding ajustado) ===== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 120px; /* igual que index */
+      height: 120px;
       background-color: rgba(219, 203, 186, 0.95);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 0 2rem; /* ✅ menos padding lateral */
     }
 
     header img {
-      height: 120px;
+      height: 120px; /* igual que index */
       width: auto;
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -68,254 +69,4 @@
 
     .obra-texto p {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      color: #2c130b;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    .obra-imagen {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start; /* ✅ justificada arriba */
-      background-color: #d8cec5;
-      padding: 2rem;
-    }
-
-    .obra-imagen img {
-      width: 80%;
-      height: 90vh;
-      object-fit: cover;
-      object-position: top; /* ✅ muestra la parte superior */
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    /* ===== GRID DE IMÁGENES ===== */
-    .obra-galeria {
-      background-color: #d8cec5;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 3rem 5%;
-      justify-items: center;
-      margin-top: 4rem;
-    }
-
-    .obra-galeria img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .obra-galeria img:hover {
-      transform: scale(1.05);
-    }
-
-    /* ===== LIGHTBOX / CARRUSEL ===== */
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 85%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-
-    .lightbox.active {
-      display: flex;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      font-family: sans-serif;
-    }
-
-    /* ===== CONTACTO (idéntico al main) ===== */
-    .contacto-obra {
-      background-color: #391c47;
-      color: #d8cec5;
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
-      padding: 5rem 10%;
-      height: 80vh;
-    }
-
-    .contacto-obra .texto {
-      width: 50%;
-    }
-
-    .contacto-obra .texto h2 {
-      font-family: 'Body Grotesque', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 3px solid #e10452;
-      display: inline-block;
-    }
-
-    .contacto-obra .texto p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .contacto-obra form input,
-    .contacto-obra form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 6px;
-      background-color: #d8cec5;
-      color: #391c47;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .contacto-obra form button {
-      background-color: #e10452;
-      color: #d8cec5;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contacto-obra form button:hover {
-      background-color: #c90345;
-    }
-
-    .contacto-obra .imagen {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .contacto-obra .imagen img {
-      width: 80%;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- HEADER -->
-
- <header>
-    <nav class="menu">
-      <div class="menu-left">
-      </div>
-      <div class="menu-center">
-         <a href="index.html"><img src="img/ADELAR-Logo.png" alt="ADELAR Logo"></a>
-      </div>
-      <div class="menu-right">
-      </div>
-    </nav>
-  </header>
-
-  <!-- SECCIÓN OBRA PRINCIPAL -->
-  <section class="obra-container">
-    <div class="obra-texto">
-      <h1>CUERDAS BATIDAS. BEATEN ROPES</h1>
-      <p>
-        Medium: Pigments, aluminium, mirrors, nylon
-      </p>
-       <p>
-        Dimensions: 40 X 60X 5 cm
-      </p>
-      <p>
-        Year: 2025
-      </p>
-      <p>
-        Hanging Hardware: Included (ready to hang)
-      </p>
-      <p>
-        This piece is part of a contemporary kinetic art series that explores the intersection of light, movement, and perception. Using materials like reflective aluminum, mirrored surfaces, transparent nylon threads, and vibrant pigments, the work creates a dynamic visual field that changes depending on the viewer’s position and the surrounding light.
-        The surface may appear static at first glance, but subtle shifts in angle reveal an ever-changing play of reflections, shadows, and optical vibrations. The nylon elements gently react to ambient air currents, adding a quiet, almost imperceptible movement to the piece — a reminder that stillness is never absolute.
-        The geometric composition is precise, yet it opens space for emotion and contemplation. Mirrors fragment and multiply the environment, inviting the viewer to become part of the work itself. The pigments are carefully chosen and layered to evoke energy, depth, and balance.
-        This series was born from a desire to reconnect with the essential: light, form, time, and the presence of the observer. Influenced by the kinetic and optical art traditions of Latin America and Europe, the piece pays tribute to the pioneers of the movement while pushing the dialogue forward with new materials and personal vision.
-        Crafted with archival-quality materials and professional techniques, the work is durable, easy to maintain, and designed for long-term display. It comes with discreet hanging hardware already installed.
-      </p>
-    </div>
-
-    <div class="obra-imagen">
-      <img src="img/Serie Interactiva-2-3.jpg" alt="Obra Principal">
-    </div>
-  </section>
-
-  <!-- GALERÍA SECUNDARIA -->
-  <section class="obra-galeria">
-    <img src="img/Serie Interactiva-2-1.jpg" alt="Detalle 1" data-pos="top">
-    <img src="img/Serie Interactiva-2-2.jpg" alt="Detalle 2">
-    <img src="img/Serie Interactiva-2-4.jpg" alt="Detalle 3">
-  </section>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
-    <img src="" alt="Vista ampliada" id="lightbox-img">
-  </div>
-
-  <!-- CONTACTO -->
-  <section class="contacto-obra">
-    <div class="texto">
-      <h2>Contacto</h2>
-      <p>¿Interesado en adquirir esta obra o conocer más? Envía un mensaje:</p>
-      <form action="mailto:adelar.art@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Tu nombre">
-        <input type="email" name="email" placeholder="Tu correo">
-        <textarea name="message" rows="5" placeholder="Mensaje..."></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-    <div class="imagen">
-      <img src="img/placeholder-contact.jpg" alt="Contacto Fondo">
-    </div>
-  </section>
-
-  <!-- SCRIPT LIGHTBOX -->
-  <script>
-    const images = document.querySelectorAll('.obra-galeria img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = img.src;
-      });
-    });
-
-    lightboxClose.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) lightbox.classList.remove('active');
-    });
-  </script>
-</body>
-</html>
+      font-weig
